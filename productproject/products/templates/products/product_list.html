@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Product System</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-box{
+            background: white;
+            padding: 20px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .price{
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Our Products</h1>
+
+    <div class="container">
+
+        {% for product in products %}
+
+        <div class="product-box">
+            <h2>{{ product.name }}</h2>
+
+            <p class="price">
+                ₱{{ product.price }}
+            </p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+
+    <h1>Products</h1>
+
+    {% for product in products %}
+        <p>{{ product.name }} - ₱{{ product.price }}</p>
+    {% endfor %}
+
+</body>
+</html> {% endcomment %}
